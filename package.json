@@ -19,5 +19,9 @@
     "predeploy": "npm run build",
     "deploy": "aws s3 sync build/ s3://notes-app-client-586239",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-plugin-react": "^7.5.1"
   }
 }
