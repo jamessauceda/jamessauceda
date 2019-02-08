@@ -1,5 +1,6 @@
 .App {
-  margin-top: 15px;
+  min-height: 100vh;
+  position: relative;
 }
 
 .App .navbar-brand {

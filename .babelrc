@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    ["transform-react-jsx", { "pragma": "Glamor.createElement" }],
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": false
+      }
+    ]
+  ]
+}
