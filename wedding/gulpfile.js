@@ -2,8 +2,9 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify-es').default;
 var rename = require('gulp-rename');
+var gutil = require('gulp-util');
 
 // compile scss to css
 gulp.task('sass', function() {
@@ -40,3 +41,9 @@ gulp.task('scripts', function() {
 
 // default task
 gulp.task('default', ['sass', 'minify-js']);
+
+gulp.task('scripts', ['clean'], function () {
+      return gulp.src('js/*.js')
+        .pipe(uglify().on('error',gutil.log))
+        .pipe(gulp.dest('minjs'));
+  });

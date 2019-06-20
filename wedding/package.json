@@ -4,21 +4,12 @@
   "description": "A wedding website with loads of features.",
   "main": "npmfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "aws s3 sync . s3://wedding-jamessauceda --exclude 'node_modules/_'"
+
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:rampatra/wedding-website.git"
-  },
-  "keywords": [
-    "wedding",
-    "template",
-    "website template"
-  ],
-  "author": "Ram Patra",
-  "license": "GPL-3.0",
-  "homepage": "https://github.com/rampatra/wedding-website",
   "devDependencies": {
+    "aws-sdk": "^2.427.0",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.2",
@@ -27,6 +18,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "font-awesome": "^4.7.0",
-    "waypoints": "^4.0.1"
+    "waypoints": "^4.0.1",
+    "aws-sdk": "^2.399.0"
   }
 }
