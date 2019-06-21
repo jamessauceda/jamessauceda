@@ -48,6 +48,7 @@
 
     .navicon {
         visibility: visible;
+        display: block;
     }
 
     header .nav-wrapper {
@@ -292,8 +293,12 @@
 }
 
 @media screen and (max-width: 480px) {
+    .hero {
+        min-height: auto;
+    }
+    
     .hero .hero-content {
-        padding-top: 110%;
+        padding-top: 50%;
     }
     
     .hero .hero-content img {
@@ -307,7 +312,7 @@
     }
 
     .hero .btn:first-of-type {
-        margin-bottom: 20px;
+        margin-bottom: 100px;
     }
 
     .hero h1 {
@@ -350,15 +355,30 @@
     }
 
     .down-arrow {
+       
+    }
+
+    header {
+        border: none;
+    }
+
+    header .logo {
         display: none;
     }
+    .fixed{
+        width: 75px;
+        right: 0px;
+        transition: none;
+    }
+    .navigation{
+        transition: none;
+    }
+
 
 }
 
 @media screen and (max-width: 320px) {
-    .hero .hero-content {
-        padding-top: 130%;
-    }
+
 
     .rsvp {
         padding-top: 20px;

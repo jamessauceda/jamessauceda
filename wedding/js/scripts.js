@@ -117,26 +117,24 @@ $(document).ready(function() {
       if (scroll >= 20) {
         $('section.navigation').addClass('fixed');
         $('header').css({
-          'border-bottom': 'none',
-          padding: '10px 0',
+          // 'border-bottom': 'none',
         });
         $('header .member-actions').css({
-          top: '26px',
+          // top: '26px',
         });
         $('header .navicon').css({
-          top: '34px',
+          // top: '34px',
         });
       } else {
         $('section.navigation').removeClass('fixed');
         $('header').css({
-          'border-bottom': 'solid 1px rgba(255, 255, 255, 0.2)',
-          padding: '25px 0',
+          // padding: '25px 0',
         });
         $('header .member-actions').css({
-          top: '41px',
+          // top: '41px',
         });
         $('header .navicon').css({
-          top: '48px',
+          // top: '48px',
         });
       }
     });

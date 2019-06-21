@@ -261,12 +261,16 @@ Navigation
   transform: translatey(-10px) rotate(-45deg);
 }
 .navicon {
-  position: absolute;
-  height: 26px;
-  right: 10px;
-  top: 48px;
+  height: 40px;
+  right: 1px;
+  top: 1px;
   visibility: hidden;
+  display: none;
   transition: all 300ms ease-in-out;
+}
+
+.header-content {
+  position: relative;
 }
 
 /* ==========================================================================
@@ -321,7 +325,6 @@ Hero
 }
 header {
   padding: 25px 0;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
   position: relative;
   width: 1170px;
   margin: 0 auto;
@@ -381,7 +384,7 @@ header {
   .member-actions {
     position: absolute;
     right: 0;
-    top: 41px;
+    top: 15px;
     transition: all 300ms ease-in-out;
   }
 }
@@ -393,6 +396,34 @@ header {
   left: 50%;
   transform: translateX(-50%);
 }
+
+section .navigation.fixed > header .member-actions{
+  top: 0px;
+}
+
+section .navigation.fixed > header .navicon{
+  top: 0px;
+}
+
+section .navigation > header .logo{
+  margin-top: 0;
+  transition: all 0.5s;
+}
+
+section .navigation.fixed > header .logo{
+  margin-top: -15px;
+}
+
+section .navigation > header{
+  padding: 25px 0;
+  transition: all 0.5s;
+}
+
+section .navigation.fixed > header{
+  padding: 20px 0 6px;
+
+}
+
 
 /* ==========================================================================
 Social share buttons
