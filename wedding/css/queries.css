@@ -251,6 +251,21 @@
     footer .footer-links {
         margin: 120px 0 120px 0;
     }
+    header {
+        border: none;
+    }
+
+    header .logo {
+        display: none;
+    }
+    .fixed{
+        width: 75px;
+        right: 0px;
+        transition: none;
+    }
+    .navigation{
+        transition: none;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -353,28 +368,6 @@
     .features {
         padding-bottom: 0;
     }
-
-    .down-arrow {
-       
-    }
-
-    header {
-        border: none;
-    }
-
-    header .logo {
-        display: none;
-    }
-    .fixed{
-        width: 75px;
-        right: 0px;
-        transition: none;
-    }
-    .navigation{
-        transition: none;
-    }
-
-
 }
 
 @media screen and (max-width: 320px) {

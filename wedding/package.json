@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "aws s3 sync . s3://wedding-jamessauceda --exclude 'node_modules/_'"
-
   },
   "devDependencies": {
     "aws-sdk": "^2.427.0",
@@ -17,8 +16,9 @@
   },
   "dependencies": {
     "animate.css": "^3.5.2",
+    "aws-sdk": "^2.399.0",
     "font-awesome": "^4.7.0",
-    "waypoints": "^4.0.1",
-    "aws-sdk": "^2.399.0"
+    "gulp-uglify-es": "^1.0.4",
+    "waypoints": "^4.0.1"
   }
 }
