@@ -118,7 +118,7 @@ class App extends Component {
           </Nav>
 
           <Routes childProps={childProps} />
-          <br />
+          <br /><br /><br />
           <Footer>
             Copyright © 2019 James Martin Sauceda. All Rights Reserved. Contact
             me{' '}
@@ -126,6 +126,7 @@ class App extends Component {
               jamesmartinsauceda@gmail.com
             </a>
           </Footer>
+          <br />
         </div>
       )
     );

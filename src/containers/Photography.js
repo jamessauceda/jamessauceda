@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import media from '../libs/media';
 
 const Card = styled.div`
   background: white;
@@ -10,6 +11,10 @@ const ContentHalf = styled.div`
   text-align: center;
   display: inline-block;
   width: 50%;
+  ${media.max(1000)`
+  width: 100%;
+  display: block;
+`}
 `;
 const Wrapper = styled.div`
   padding: 16px;
