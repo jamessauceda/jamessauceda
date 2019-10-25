@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Routes from './Routes';
 import { authUser, signOutUser } from './libs/awsLib';
 import RouteNavItem from './components/RouteNavItem';
+import media from './libs/media';
 import './App.css';
 
 const Nav = styled.div`
@@ -12,16 +13,34 @@ const Nav = styled.div`
 
   a {
     padding-right: 20px;
+    ${media.max(480)`
+    padding-right: 0;
+    `}
   }
+`;
+const Logo = styled.div`
+${media.max(480)`
+width: 100%;
+text-align: center;
+`}
+a{
+  float: left;
+  &.is-active{
+    display: none;
+  }
+};
 `;
 const Right = styled.div`
   float: right;
+  ${media.max(480)`
+    display: none;
+  `}
 `;
 const Footer = styled.div`
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 25px;
+  width: 93%;
+  height: 45px;
   font-size: 10px;
   letter-spacing: 0.3px;
   text-align: center;
@@ -74,7 +93,11 @@ class App extends Component {
       !this.state.isAuthenticating && (
         <div className="App container">
           <Nav>
-            <StyledLink to="/">James Martin Sauceda</StyledLink>
+            <StyledLink to="/" >
+              <Logo>
+                James Martin Sauceda
+              </Logo>
+            </StyledLink>
             <Right>
               <StyledLink activeClassName="is-active" to="/web">
                 Web
@@ -95,6 +118,7 @@ class App extends Component {
           </Nav>
 
           <Routes childProps={childProps} />
+          <br />
           <Footer>
             Copyright © 2019 James Martin Sauceda. All Rights Reserved. Contact
             me{' '}

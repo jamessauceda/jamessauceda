@@ -2,7 +2,21 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { invokeApig } from '../libs/awsLib';
+import styled from 'styled-components';
 import './Home.css';
+const Nav = styled.div`
+a{
+  padding-right: 0px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;  
+  font-size: 28px;
+  font-weight: 100;
+  line-height: 60px;
+}
+`;
+
+
 
 export default class Home extends Component {
   constructor(props) {
@@ -65,8 +79,27 @@ export default class Home extends Component {
 
   renderLander() {
     return (
-      <div className="lander">
-        <div>
+      <div>
+        <div className="mobileNav">
+          <Nav>
+            <Link activeClassName="is-active" to="/web">
+              Web
+              </Link>
+            <Link activeClassName="is-active" to="/design">
+              Design
+              </Link>
+            <Link activeClassName="is-active" to="/music">
+              Music
+              </Link>
+            <Link activeClassName="is-active" to="/photography">
+              Photography
+              </Link>
+            <a href="mailto:jamesmartinsauceda@gmail.com?subject=From jamessauceda.com">
+              Contact
+              </a>
+          </Nav>
+        </div>
+        <div className="lander">
           <img src="img/js-logo-animated.svg" width="50%" />
         </div>
       </div>

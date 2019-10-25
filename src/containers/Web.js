@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import media from '../libs/media';
 
 const Content = styled.div`
   background: white;
@@ -17,6 +18,10 @@ const ContentHalf = styled.div`
   text-align: center;
   display: inline-block;
   width: 50%;
+  ${media.max(480)`
+  width: 100%;
+  display: block;
+`}
 `;
 const Wrapper = styled.div`
 
@@ -30,6 +35,9 @@ const Banner = styled.div.attrs(({ src }) => ({
   background-repeat: no-repeat;
   background-position: center center;
   margin: 24px 0;
+  ${media.max(480)`
+    height: 180px;
+  `}
 `;
 
 const Title = styled.div`

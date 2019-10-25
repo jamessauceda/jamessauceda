@@ -6,3 +6,20 @@
 .App .navbar-brand {
   font-weight: bold;
 }
+
+.mobileNav{
+  display: none;
+}
+
+
+@media(max-width: 480px) {
+
+  .lander{
+    display: none;
+  }
+
+  .mobileNav{
+    display: block;
+  }
+
+}
