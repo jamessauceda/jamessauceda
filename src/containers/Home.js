@@ -50,16 +50,16 @@ export default class Home extends Component {
           {'Created: ' + new Date(note.createdAt).toLocaleString()}
         </ListGroupItem>
       ) : (
-        <ListGroupItem
-          key="new"
-          href="/notes/new"
-          onClick={this.handleNoteClick}
-        >
-          <h4>
-            <b>{'\uFF0B'}</b> Create a new note
+          <ListGroupItem
+            key="new"
+            href="/notes/new"
+            onClick={this.handleNoteClick}
+          >
+            <h4>
+              <b>{'\uFF0B'}</b> Create a new note
           </h4>
-        </ListGroupItem>
-      ),
+          </ListGroupItem>
+        ),
     );
   }
 
@@ -87,7 +87,8 @@ export default class Home extends Component {
   render() {
     return (
       <div className="Home">
-        {this.props.isAuthenticated ? this.renderNotes() : this.renderLander()}
+        {/* {this.props.isAuthenticated ? this.renderNotes() : this.renderLander()} */}
+        {this.renderLander()}
       </div>
     );
   }

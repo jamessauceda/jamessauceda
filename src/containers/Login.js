@@ -16,7 +16,8 @@ export default class Login extends Component {
     this.state = {
       isLoading: false,
       email: "",
-      password: ""
+      password: "",
+      code: "",
     };
   }
 
@@ -37,8 +38,19 @@ export default class Login extends Component {
     );
   }
 
+  code(code) {
+    return new Promise((resolve, reject) => {
+      var didSucceed = code === "54321";
+      didSucceed ? resolve('Success') : reject('Incorect Passphrase');
+    })
+  }
+
   validateForm() {
     return this.state.email.length > 0 && this.state.password.length > 0;
+  }
+
+  validateFormCode() {
+    return this.state.code.length > 0;
   }
 
   handleChange = event => {
@@ -61,10 +73,50 @@ export default class Login extends Component {
     }
   }
 
+  handleSubmitCode = async event => {
+    event.preventDefault();
+
+    this.setState({ isLoading: true });
+
+    try {
+      await this.code(this.state.code);
+      this.props.userHasAuthenticated(true);
+    } catch (e) {
+      alert(e);
+      this.setState({ isLoading: false });
+    }
+  }
+
   render() {
+    console.log(this.props);
     return (
       <div className="Login">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmitCode}>
+          <h4>Page is restricted.</h4>
+          <p>Please enter code below.</p>
+          <hr />
+          <FormGroup controlId="code" bsSize="large">
+            <ControlLabel>Code</ControlLabel>
+            <FormControl
+              autoFocus
+              type="password"
+              value={this.state.code}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <LoaderButton
+            block
+            bsSize="large"
+            disabled={!this.validateFormCode()}
+            type="submit"
+            isLoading={this.state.isLoading}
+            text="Enter"
+            loadingText="Checking..."
+          />
+        </form>
+
+        {/* <form onSubmit={this.handleSubmit}>
+          <h4>Login</h4>
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
@@ -91,7 +143,7 @@ export default class Login extends Component {
             text="Login"
             loadingText="Logging in…"
           />
-        </form>
+        </form> */}
       </div>
     );
   }

@@ -4,6 +4,13 @@ import styled from 'styled-components';
 const Card = styled.div`
   background: white;
 `;
+const ContentHalf = styled.div`
+  background: white;
+  padding: 16px;
+  text-align: center;
+  display: inline-block;
+  width: 50%;
+`;
 const Wrapper = styled.div`
   padding: 16px;
 `;
@@ -34,17 +41,29 @@ export default class Photography extends Component {
   render() {
     return (
       <div className="Photography">
-        <h2>500px</h2>
-
-        <a href="https://500px.com/james-martin" target="_blank">
-          <Card>
-            <Banner src="https://drscdn.500px.org/user_cover/14230553/q%3D65_m%3D2048/v2?webp=true&v=16&sig=777150a58c15cd006e2191cbd49dd8cc7c1ff8bb632973b4ecc5310e32825f5c" />
-            <Wrapper>
-              <Title>https://500px.com/james-martin</Title>
-              <Button>Visit Gallery</Button>
-            </Wrapper>
-          </Card>
-        </a>
+        <h2>Photography</h2>
+        <ContentHalf>
+          <a href="https://500px.com/james-martin" target="_blank">
+            <Card>
+              <Banner src="https://drscdn.500px.org/user_cover/14230553/q%3D65_m%3D2048/v2?webp=true&v=16&sig=777150a58c15cd006e2191cbd49dd8cc7c1ff8bb632973b4ecc5310e32825f5c" />
+              <Wrapper>
+                <Title>https://500px.com/james-martin</Title>
+                <Button>Visit Gallery</Button>
+              </Wrapper>
+            </Card>
+          </a>
+        </ContentHalf>
+        <ContentHalf>
+          <a href="https://instagram.com/jamesmartinsauceda" target="_blank">
+            <Card>
+              <Banner src="img/james-sauceda-instagram.png" />
+              <Wrapper>
+                <Title>https://instagram.com/jamesmartinsauceda</Title>
+                <Button>Visit Instagram</Button>
+              </Wrapper>
+            </Card>
+          </a>
+        </ContentHalf>
       </div>
     );
   }

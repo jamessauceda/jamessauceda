@@ -6,12 +6,14 @@ import UnauthenticatedRoute from './components/UnauthenticatedRoute';
 
 import Home from './containers/Home';
 import Login from './containers/Login';
-import Notes from './containers/Notes';
+// import Notes from './containers/Notes';
 import Signup from './containers/Signup';
-import NewNote from './containers/NewNote';
+// import NewNote from './containers/NewNote';
 import NotFound from './containers/NotFound';
 import Music from './containers/Music';
 import Photography from './containers/Photography';
+import Web from './containers/Web';
+import Design from './containers/Design';
 
 export default ({ childProps }) => (
   <Switch>
@@ -28,7 +30,11 @@ export default ({ childProps }) => (
       component={Photography}
       props={childProps}
     />
-    {/* <UnauthenticatedRoute path="/login" exact component={Login} props={childProps} />
+    <UnauthenticatedRoute path="/web" exact component={Web} props={childProps} />
+    <UnauthenticatedRoute path="/design" exact component={Design} props={childProps} />
+
+    <UnauthenticatedRoute path="/login" exact component={Login} props={childProps} />
+    {/* 
     <UnauthenticatedRoute path="/signup" exact component={Signup} props={childProps} />
     <AuthenticatedRoute path="/notes/new" exact component={NewNote} props={childProps} />
     <AuthenticatedRoute path="/notes/:id" exact component={Notes} props={childProps} /> */}

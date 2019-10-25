@@ -11,7 +11,8 @@ export async function invokeApig({
   body
 }) {
   if (!await authUser()) {
-    throw new Error("User is not logged in");
+    throw new Error("User is no longer authenticated.");
+    window.location.reload();
   }
 
   const signedRequest = sigV4Client
@@ -105,7 +106,7 @@ export function signOutUser() {
 
 function getUserToken(currentUser) {
   return new Promise((resolve, reject) => {
-    currentUser.getSession(function(err, session) {
+    currentUser.getSession(function (err, session) {
       if (err) {
         reject(err);
         return;

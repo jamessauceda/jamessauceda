@@ -76,6 +76,12 @@ class App extends Component {
           <Nav>
             <StyledLink to="/">James Martin Sauceda</StyledLink>
             <Right>
+              <StyledLink activeClassName="is-active" to="/web">
+                Web
+              </StyledLink>
+              <StyledLink activeClassName="is-active" to="/design">
+                Design
+              </StyledLink>
               <StyledLink activeClassName="is-active" to="/music">
                 Music
               </StyledLink>
