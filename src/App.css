@@ -4,10 +4,6 @@
   padding: 2rem 0 6rem;
 }
 
-.shell--wide {
-  width: min(1040px, calc(100% - 3rem));
-}
-
 .topbar {
   display: flex;
   align-items: center;
@@ -93,61 +89,57 @@ h3 {
   padding-top: 1.5rem;
 }
 
-.presentation-cards {
-  display: grid;
-  gap: 3rem;
-}
-
-.presentation-card {
+.presentation-teasers {
   display: grid;
   gap: 1.25rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid var(--line);
 }
 
-.presentation-card:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
-.presentation-card__copy {
+.presentation-teaser {
   display: grid;
-  gap: 0.55rem;
-  justify-items: start;
+  gap: 0.9rem;
+  align-items: start;
 }
 
-.presentation-card__title {
-  margin: 0;
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  text-transform: none;
-  color: var(--ink);
-}
-
-.presentation-card__blurb {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.55;
-  max-width: 40rem;
-}
-
-.presentation-card__embed {
-  position: relative;
+.presentation-teaser__thumb {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border: 1px solid var(--line);
   border-radius: 12px;
-  overflow: hidden;
   background: var(--surface);
 }
 
-.presentation-card__embed iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
+.presentation-teaser__copy {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.presentation-teaser__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.presentation-teaser__blurb {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  max-width: 36rem;
+}
+
+.presentation-teaser__more {
+  font-size: 0.88rem;
+  color: var(--faint);
+}
+
+.presentation-teaser:hover .presentation-teaser__title {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.presentation-teaser:hover .presentation-teaser__more {
+  color: var(--ink);
 }
 
 .home__block,
@@ -355,10 +347,6 @@ h3 {
     padding-top: 3rem;
   }
 
-  .shell--wide {
-    width: min(1040px, calc(100% - 4rem));
-  }
-
   .signals {
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     gap: 0.75rem;
@@ -371,7 +359,16 @@ h3 {
     gap: 5rem;
   }
 
-  .presentation-cards {
-    gap: 4rem;
+  .presentation-teasers {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .presentation-teaser {
+    gap: 0.75rem;
+  }
+
+  .presentation-teaser__blurb {
+    font-size: 0.92rem;
   }
 }

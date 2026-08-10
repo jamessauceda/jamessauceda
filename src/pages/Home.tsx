@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { PresentationCard } from "../components/PresentationCard";
 import { Signals } from "../components/Signals";
 import { presentations } from "../data/presentations";
 import { profile } from "../data/profile";
@@ -50,17 +51,9 @@ export function Home() {
             View all presentations
           </Link>
         </div>
-        <div className="case-links">
+        <div className="presentation-teasers">
           {presentations.slice(0, 3).map((deck) => (
-            <Link
-              key={deck.slug}
-              to={`/presentations#${deck.slug}`}
-              className="case-link"
-            >
-              <span>{deck.title}</span>
-              <span className="case-link__blurb">{deck.blurb}</span>
-              <span className="case-link__more">View presentation</span>
-            </Link>
+            <PresentationCard key={deck.slug} deck={deck} />
           ))}
         </div>
       </section>
