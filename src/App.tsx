@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
+import { ScrollToTop } from "./components/ScrollToTop";
 import { CaseStudy } from "./pages/CaseStudy";
 import { Home } from "./pages/Home";
 import { Presentations } from "./pages/Presentations";
@@ -9,6 +10,7 @@ import "./App.css";
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
