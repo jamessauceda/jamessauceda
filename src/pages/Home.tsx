@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Signals } from "../components/Signals";
+import { presentations } from "../data/presentations";
 import { profile } from "../data/profile";
 
 export function Home() {
@@ -37,6 +38,28 @@ export function Home() {
               <span>{item.label}</span>
               <span className="case-link__blurb">{item.detail}</span>
               <span className="case-link__more">View work</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="home__block">
+        <div className="section-head">
+          <h2>Presentations</h2>
+          <Link to="/presentations" className="text-link">
+            View all presentations
+          </Link>
+        </div>
+        <div className="case-links">
+          {presentations.slice(0, 3).map((deck) => (
+            <Link
+              key={deck.slug}
+              to={`/presentations#${deck.slug}`}
+              className="case-link"
+            >
+              <span>{deck.title}</span>
+              <span className="case-link__blurb">{deck.blurb}</span>
+              <span className="case-link__more">View presentation</span>
             </Link>
           ))}
         </div>
